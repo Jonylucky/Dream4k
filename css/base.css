@@ -42,3 +42,46 @@ html {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
     border: 0.1rem solid rgba(0, 0, 0, 0.7);
 }
+/* width colums*/
+.wd-full {
+    width: 100%;
+}
+
+.wd-haft {
+    width: 49%;
+}
+
+.wd-thir {
+    width: 32.3333%;
+}
+
+.wd-five {
+    width: 19%;
+}
+
+.wd-for {
+    width: 24%;
+}
+
+.wd-76 {
+    width: 76%;
+}
+
+/* box-shadow */
+.sadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+}
+
+/* padding */
+.pd-8 {
+    padding: 8px 0;
+
+}
+
+.pd-16 {
+    padding: 16px 0;
+}
+
+.bd-bottom {
+    border-bottom: 1px solid #ccc;
+}
