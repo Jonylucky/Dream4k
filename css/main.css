@@ -167,7 +167,7 @@ width: 100%;
 object-fit: cover;
 }
 .box-img:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 .btn-catery{
@@ -182,10 +182,18 @@ background-color: var(--btn);
 
 text-align: center;
 display: none;
+border-radius: 20px;
 }
 .btn-link{
     text-decoration: none;
     font-size: 1.6rem;
+    color: #fff;
+    padding: 8px 16px;
+    display: inline-block;
+   
+
+}
+.btn-link:hover{
     color: #fff;
 }
 .box-catery:hover .btn-catery{
@@ -202,19 +210,212 @@ display: none;
     list-style: none;
     padding: 0;
     font-size: 1.6rem;
-
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+.card-item{
+    padding: 8px 16px;
+}
+.card-item_img{
+    width: 100%;
+    overflow: hidden;
+   
 }
 .card-link{
     color: #fff;
 }
+.card-img{
+    width: 100%;
+    object-fit: cover;
+}
+.card-item_img:hover .card-img{
+    transform: scale(1.1);
+}
 /* baner */
+.banner{
+    position: relative;
+}
 .baner-img{
     width: 100%;
     height: 400px;
     object-fit:cover ;
     
 }
+.baner-head{
+   
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+color: #fff;
+font-size: 4rem;
+text-align: center;
+}
+/* head */
+.head{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid #140101;
 
+   
+}
+/* gallsery */
+.container-gallsery{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.view-all{
+    font-size: 16px;
+}
+/* contact */
+.container-register{
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 0;
+}
+.box-touch{
+    width: 100%;
+    background-color: var(--green);
+   
+    padding: 16px ;
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.box-map{
+    width: 100%;
+    height: 100%;
+}
+.map{
+    width: 100%;
+    height: 100%;  
+}
+/* about */
+.container-about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:32px 0;
+}
+.card-about-list{
+    list-style: none;
+    text-align: center;
+    padding: 0 16px;
+    font-size: 1.6rem;
+}
+.card-about-item{
+    padding: 16px 0;
+}
+.card-about-item_link{
+    text-decoration: none;
+    display: inline-block;
+   background: var(--btn);
+   padding: 8px 16px;
+   border-radius: 20px;
+   color: #000;
+
+}
+/* blog */
+.container-blog{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card-blog-list{
+    background-color: #fff;
+    width: 80%;
+    list-style: none;
+    text-align: center;
+    font-size: 1.6rem;
+    align-items: center;
+    padding: 8px 16px;
+    margin: 32px 0;
+}
+.card-blog-item{
+padding: 8px 0;
+}
+.card-blog-item span{
+    border-bottom: 1px solid #000;
+}
+.card-blog-item_link{
+    color: #000;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 600;
+    
+}
+
+.card-background{
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 32px 0;
+background-size: cover;
+background-position: center;
+
+}
+/* page detail  */
+.container-detail{
+margin: 32px 0;
+}
+.container-detail{
+    display: flex;
+    justify-content:space-between;
+}
+.container-detail img{
+    width: 100%;
+}
+.card-detail_list{
+    list-style: none;
+    width: 60%;
+
+
+}
+
+.card-detail_item{
+    padding: 16px;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.card-detail_item span{
+    font-size: 1.4rem;
+}
+.card-detail_link{
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    background: var(--btn);
+    padding: 8px 16px;
+    font-size: 1.6rem;
+    text-align: center;
+    border-radius: 5px;
+
+}
+.detail-list-titel{
+    list-style: none;
+    padding: 16px 0;
+
+}
+.detail-item-titel{
+    padding: 16px 0;
+    border-bottom:  1px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.detail-item-titel i{
+    font-size: 1.6rem;
+}
 /* footer */
 .footer{
     background:var(--green);
@@ -227,6 +428,7 @@ display: none;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap:1.5rem;
 }
+
 
 
 .footer .box-container .box h3{
