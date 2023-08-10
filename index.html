@@ -80,9 +80,9 @@
     </header>
 
 
-    <div ng-view>
+    <div ng-view> </div>
 
-    </div>
+
     <!--footer -->
     <footer class="footer">
         <div class="container">
@@ -139,7 +139,7 @@
                 templateUrl: "./view/home.html",
             })
             .when("/shop", {
-                templateUrl: "./view/shop.html",
+                templateUrl: "./view/prouct.html",
             })
             .when("/contact", {
                 templateUrl: "./view/contact.html",
@@ -180,7 +180,19 @@
     });
     myApp.controller("detailCtrl", function ($scope) {
 
+    });
+    // product controller
+    myApp.controller("productCtrl", function ($scope, $http, myService) {
+
+
+
+
+
+
     })
+
+
+
 
 </script>
 
