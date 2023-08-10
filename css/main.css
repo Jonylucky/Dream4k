@@ -614,7 +614,7 @@ margin-top: 5%;
   .item-name_product{
     padding: 4px 0;
     font-size: 1.6rem;
-    background-color: #fff;
+    background-color: var(--green);
     border-bottom: 1px solid #ccc;
 
   }
@@ -627,4 +627,5 @@ margin-top: 5%;
   }
   .item-name_product a:hover{
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    background-color: #fff;
   }
