@@ -151,7 +151,55 @@
                 templateUrl: "./view/detail.html",
             });
     });
+    myApp.run(function ($rootScope, $http) {
+        $http.get("./data/data.json").then(function (response) {
+            $rootScope.dataProduct = response.data.dataProduct;
+            console.log($rootScope.dataProduct);
+        });
+    });
+    // factory
+    myApp.factory("myService", function () {
+        var savedData = {};
+        var saveType = "";
+        // set data product
+        function set(data) {
+            savedData = data;
+        }
+        function get() {
+            return savedData;
+        }
+        myApp.config(['$provide', function ($provide) {
+            $provide.decorator('$templateRequest', ['$delegate', function ($delegate) {
 
+                var fn = $delegate;
+
+                $delegate = function (tpl) {
+
+                    for (var key in fn) {
+                        $delegate[key] = fn[key];
+                    }
+
+                    return fn.apply(this, [tpl, true]);
+                };
+
+                return $delegate;
+            }]);
+        }]);
+        // save type product
+        function setTypeProduct(type) {
+            saveType = type;
+        }
+        function getTypeproduct() {
+            return saveType;
+        }
+
+        return {
+            set: set,
+            get: get,
+            setTypeProduct: setTypeProduct,
+            getTypeproduct: getTypeproduct,
+        };
+    });
     // controller home
     myApp.controller("homeCtrl", function ($scope, myService) {
         let fade = document.querySelectorAll(".fade");
@@ -173,21 +221,61 @@
         $scope.saveData = function (data) {
             myService.set(data);
         };
+        // save item data  myservice
+        $scope.saveData = function (item) {
+            myService.set(item);
+        };
         // save type to myserevice
         $scope.saveType = function (type) {
             myService.setTypeProduct(type);
         };
     });
-    myApp.controller("detailCtrl", function ($scope) {
+    myApp.controller("detailCtrl", function ($scope, myService) {
 
+
+
+        $scope.data = myService.get();
+
+        $scope.listPresProduct = []
+
+
+
+
+        $scope.dataProduct.forEach((element, index) => {
+            if (element.brand == $scope.data.brand) {
+                $scope.listPresProduct.push(element)
+
+                if (element.id === $scope.data.id) {
+                    $scope.listPresProduct.splice(index, 1)
+
+                }
+
+
+            }
+
+        });
+        // save item data  myservice
+        $scope.saveRealatedData = function (item) {
+            $scope.dataProduct.forEach((element, index) => {
+
+
+                if (element.id === item.id) {
+
+                    $scope.data = element
+                }
+
+            });
+        };
+        console.log($scope.listPresProduct)
     });
     // product controller
-    myApp.controller("productCtrl", function ($scope, $http, myService) {
+    myApp.controller("productCtrl", function ($scope, myService) {
 
 
-
-
-
+        // save item data  myservice
+        $scope.saveData = function (item) {
+            myService.set(item);
+        };
 
     })
 
