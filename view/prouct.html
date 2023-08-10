@@ -96,46 +96,28 @@
                     </div>
                 </div>
             </div>
-            <div class="shop-card wd-76 s-full-width">
-                <div class="product-content">
+            <div class="wd-76">
 
-                    <div class=" box-product wd-thir  s-col-full">
-                        <div class=" product-icon ">
-                            <div class="box-icon">
-                                <a href="" class="icon-link"> <i class="fa-solid fa-heart "></i></a>
-                                <a href="" class="icon-link"> <i class="fa-solid fa-cart-shopping "></i></a>
-                                <a href="#!detail" class="icon-link" ng-click="saveData(item)"> <i
-                                        class="fa-solid fa-eye "></i></a>
-                            </div>
-                        </div>
-                        <ol class="box-list">
-                            <li class="box-item"> <img src={{item.image}} alt="">
+                <div class="products">
+                    <div class="card-product wd-thir" ng-repeat="item in dataProduct |limitTo:9">
+                        <ul class="card-list">
+                            <li class="card-item_img"><img src="{{item.img}}" alt="" class="card-img">
                             </li>
-                            <li class="box-item">
+                            <li class="card-item">
                                 <h3>{{item.name}}</h3>
+                                <p>Price: {{item.price}} $</p>
                             </li>
-                            <li class="box-item">
-                                <span>{{item.type}}</span>
-                            </li>
+                            <li class="card-item">{{item.brand}}</li>
 
-                            <li class="box-item"><span>$ {{item.price}}</span></li>
-                            <li class="box-item">
-                                <ul class="list-icon">
-                                    <li class="item-icon"><i class="fa-solid fa-star"></i></li>
-                                    <li class="item-icon"><i class="fa-solid fa-star"></i></li>
-                                    <li class="item-icon"><i class="fa-solid fa-star"></i></li>
-                                    <li class="item-icon"><i class="fa-solid fa-star"></i></li>
-                                    <li class="item-icon"><i class="fa-solid fa-star"></i></li>
-                                </ul>
-                            </li>
-                        </ol>
+                            <li class="card-item"><a href="#!detail" class="card-link btn" ng-click="saveData(item)">Add
+                                    to
+                                    card</a></li>
+                        </ul>
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
-    <div id="pagebar" class="numberbar">
+        <div id="pagebar" class="numberbar">
 
+        </div>
     </div>
-</div>

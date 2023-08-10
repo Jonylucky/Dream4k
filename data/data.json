@@ -1,41 +1,244 @@
 {
-    "dataProduct":[
-      {
-        "id":1,
-        "name":"",
-        "img":"",
-        "brand":"",
-        "quantily":1,
-        "price":"19"  
-      },
-      {
-        "id":1,
-        "name":"",
-        "img":"",
-        "brand":"",
-        "quantily":1,
-        "price":"19"  
-      },
-      {
-        "id":1,
-        "name":"",
-        "img":"",
-        "brand":"",
-        "quantily":1,
-        "price":"19"  
-      },
-      {
-        "id":1,
-        "name":"",
-        "img":"",
-        "brand":"",
-        "quantily":1,
-        "price":"19"  
-      }
-      
+  "dataProduct":[
+    {
+      "id":1,
+      "name":"Hydrangea",
+      "img":"./images/cây cẩm tú cầu/cẩm tú cầu 1.webp",
+      "brand":"flowering shrubs",
+      "quantily":200,
+      "price":"50"  
+    },
+    {
+      "id":2,
+      "name":"Portulaca_Grandiflora",
+      "img":"./images/cây hoa 10 giờ/hoa 10 giờ 11.jpg",
+      "brand":"flowering shrubs",
+      "quantily":300,
+      "price":"1"  
+    },
+    {
+      "id":3,
+      "name":"Laurel",
+      "img":"./images/cây nguyệt quế/cây nguyệt quế 2.jpg",
+      "brand":"flowering shrubs",
+      "quantily":400,
+      "price":"3"  
+    },
+    {
+      "id":4,
+      "name":"Bromeliad",
+      "img":"./images/dứa cảnh/dứa cảnh nến 4.jpg",
+      "brand":"flowering shrubs",
+      "quantily":100,
+      "price":"5"  
+    },
+    {
+      "id":5,
+      "name":"Snowflake_Tree",
+      "img":"./images/hoa bông tuyết/hoa bông tuyết 3.jpg",
+      "brand":"flowering shrubs",
+      "quantily":50,
+      "price":"4"  
+    },
+    {
+      "id":6,
+      "name":"Gomphrena",
+      "img":"./images/hoa cúc bách nhật/cúc bách nhật 5.jpg",
+      "brand":"flowering shrubs",
+      "quantily":60,
+      "price":"1"  
+    },
+    {
+      "id":7,
+      "name":"Mexican_Petunia",
+      "img":"./images/hoa chièu tím/hoa chiều tím 4.jpg",
+      "brand":"flowering shrubs",
+      "quantily":40,
+      "price":"10"  
+    },
+    {
+      "id":8,
+      "name":"Coconut",
+      "img":"./images/hoa dừa/hoa dừa cạn 1.jpg",
+      "brand":"flowering shrubs",
+      "quantily":75,
+      "price":"4"  
+    },
+    {
+      "id":9,
+      "name":"Gerbera_Flower",
+      "img":"./images/hoa đồng tiền/hoa đồng tiền 10.png",
+      "brand":"flowering shrubs",
+      "quantily":46,
+      "price":"5"  
+    },
+    {
+      "id":10,
+      "name":"Rose_Flower",
+      "img":"./images/hoa hồng/hoa hồng 7.jpg",
+      "brand":"flowering shrubs",
+      "quantily":79,
+      "price":"50"  
+    },
+    {
+      "id":11,
+      "name":" Lantana_Camara", 
+      "img":"./images/hoa ngũ sắc/hoa ngũ sắc 1.jpg",
+      "brand":"flowering shrubs",
+      "quantily":90,
+      "price":"1"  
+    },
+    {
+      "id":12,
+      "name":"Snowfake_Jasmine",
+      "img":"./images/mai vạn phúc/cay mai van phuc.png",
+      "brand":"flowering shrubs",
+      "quantily":40,
+      "price":"3"  
+    },
 
 
 
+    {
+      "id":13,
+      "name":"Pachia_Aquatica ",
+      "img":"./images/indoor/cây kim ngân5/Cây công trình.jpg",
+      "brand":"InDoor",
+      "quantily":20,
+      "price":"12"  
+    },
+    {
+      "id":14,
+      "name":"Zamioculcas_Zamiifolia ",
+      "img":"./images/indoor/cây kim tiền6/Cây kim tiền (kim phát tài).jpg",
+      "brand":"InDoor",
+      "quantily":100,
+      "price":"5"  
+    },
+    {
+      "id":15,
+      "name":"Kalanchoe_Pinnata",
+      "img":"./images/indoor/cây sống đời 2/tải xuống.jpg",
+      "brand":"InDoor",
+      "quantily":30,
+      "price":"5"  
+    },
+    {
+      "id":16,
+      "name":"Cedar_Bonsai ",
+      "img":"./images/indoor/cây tuyết tùng 4/067f5703-ed76-44e6-a301-103fe3966838.jpg",
+      "brand":"InDoor",
+      "quantily":60,
+      "price":"5"  
+    },
+    {
+      "id":17,
+      "name":"Euphorbia_Pulcherrima",
+      "img":"./images/indoor/cây trạng nguyên 1/91caca17-030d-4928-ae2d-566730756ad8.jpg",
+      "brand":"InDoor",
+      "quantily":78,
+      "price":"7"  
+    },
+    {
+      "id":18,
+      "name":"Chlorophytum_Bichetii ",
+      "img":"./images/indoor/cỏ lan chi9/tải xuống (2).jpg",
+      "brand":"InDoor",
+      "quantily":90,
+      "price":"3"  
+    },
+    {
+      "id":19,
+      "name":"Fern",
+      "img":"./images/indoor/dương sỉ10/【シダ植物図鑑】インテリアにおすすめの種類14選　基本的な育て方や、コケとの違いは？ - ジョイニカル~Enjoy botanical~ 花や観葉植物、人気の多肉植物などを楽しもう.jpg",
+      "brand":"InDoor",
+      "quantily":23,
+      "price":"1"  
+    },
+    {
+      "id":20,
+      "name":"Clivia_Miniata ",
+      "img":"./images/indoor/lan quân tử7/images (5).jpg",
+      "brand":"InDoor",
+      "quantily":15,
+      "price":"15"  
+    },
+    {
+      "id":21,
+      "name":" Cupressus_macrocarpa",
+      "img":"./images/indoor/tùng thơm 3/Cây thông mini được làm từ cây tùng thơm với mùi….jpg",
+      "brand":"InDoor",
+      "quantily":14,
+      "price":"5"  
+    },
+    {
+      "id":22,
+      "name":"Epipremnum aureum  ",
+      "img":"./images/indoor/trầu bà 8/Chậu treo Epipremnum aureum Yellow Splash (Trầu Bà Vàng) chậu treo bí ngô.jpg",
+      "brand":"InDoor",
+      "quantily":55,
+      "price":"10"  
+    },
 
-    ]
+
+
+    {
+      "id":23,
+      "name":"Kalanchoe pinnata",
+      "img":"./images/Succulent(ca╠éy mo╠úng nu╠¢o╠¢╠üc)/Ca╠éy Hoa Bo╠ëng.jpeg",
+      "brand":"Succulent",
+      "quantily":78,
+      "price":"2"  
+    },
+    {
+      "id":24,
+      "name":"Snake Plant",
+      "img":"./images/Succulent(ca╠éy mo╠úng nu╠¢o╠¢╠üc)/Ca╠éy Lu╠¢o╠¢╠âi Ho╠é╠ë nu╠¢o╠¢╠üc.jpeg",
+      "brand":"Succulent",
+      "quantily":95,
+      "price":"10"  
+    },
+    {
+      "id":25,
+      "name":"Zebra Cactus",
+      "img":"./images/Succulent(ca╠éy mo╠úng nu╠¢o╠¢╠üc)/Ca╠éy Mo╠üng Ro╠é╠Çng.jpeg",
+      "brand":"Succulent",
+      "quantily":23,
+      "price":"19"  
+    },
+    {
+      "id":26,
+      "name":"Lithops",
+      "img":"./images/Succulent(ca╠éy mo╠úng nu╠¢o╠¢╠üc)/lithops.jpg",
+      "brand":"Succulent",
+      "quantily":85,
+      "price":"15"  
+    },
+    {
+      "id":27,
+      "name":"VEra",
+      "img":"./images/Succulent(ca╠éy mo╠úng nu╠¢o╠¢╠üc)/Nha ─æam.jpeg",
+      "brand":"Succulent",
+      "quantily":73,
+      "price":"2"  
+    },
+    {
+      "id":28,
+      "name":"succulent",
+      "img":"./images/Succulent(ca╠éy mo╠úng nu╠¢o╠¢╠üc)/Nha ─æam.jpeg",
+      "brand":"Succulent",
+      "quantily":91,
+      "price":"1"  
+    },
+    {
+      "id":29,
+      "name":"succulent",
+      "img":"./images/Succulent/.jpeg",
+      "brand":"Succulent",
+      "quantily":82,
+      "price":"100"  
+    }
+    
+
+  ]
 }
