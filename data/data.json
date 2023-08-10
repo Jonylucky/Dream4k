@@ -1,0 +1,41 @@
+{
+    "dataProduct":[
+      {
+        "id":1,
+        "name":"",
+        "img":"",
+        "brand":"",
+        "quantily":1,
+        "price":"19"  
+      },
+      {
+        "id":1,
+        "name":"",
+        "img":"",
+        "brand":"",
+        "quantily":1,
+        "price":"19"  
+      },
+      {
+        "id":1,
+        "name":"",
+        "img":"",
+        "brand":"",
+        "quantily":1,
+        "price":"19"  
+      },
+      {
+        "id":1,
+        "name":"",
+        "img":"",
+        "brand":"",
+        "quantily":1,
+        "price":"19"  
+      }
+      
+
+
+
+
+    ]
+}
