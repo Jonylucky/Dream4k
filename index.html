@@ -37,7 +37,7 @@
 
 </head>
 
-<body ng-app="myApp">
+<body ng-app="myApp" onload="myFunction()" onunload="myUnFunction()">
     <!-- header nav -->
     <header class="header">
         <div class="container">
@@ -46,14 +46,14 @@
                 <div class="nav-log">
 
 
-                    <img src="./images/LOG.jpg" alt="">
+                    <a href="#!"> <img src="./images/LOG.jpg" alt=""></a>
                 </div>
                 <div class="nav-body">
 
                     <ul class="nav-list">
                         <li class="nav-item"><a href="#!" class="nav-link">Home</a></li>
 
-                        <li class="nav-item"><a href="#!shop" class="nav-link">Shop</a></li>
+                        <li class="nav-item"><a href="#!shop/shop" class="nav-link">Shop</a></li>
 
                         <li class="nav-item"><a href="#!about" class="nav-link">About</a></li>
 
@@ -73,7 +73,8 @@
                         <li class="info-item"><a href="#!cart" class="info-link"><i
                                     class="fa-solid fa-cart-shopping"></i></a>
                         </li>
-                        <li class="info-item"><a href="" class="info-link"><i class="fa-solid fa-user"></i></a></li>
+                        <li class="info-item"><a href="#!login" class="info-link"><i class="fa-solid fa-user"></i></a>
+                        </li>
                         <li class="info-item">
                             <p><i class="fa-solid fa-earth-americas"></i></p>
                             <p class="info-online">6</p>
@@ -133,6 +134,8 @@
                 </div>
             </div>
         </div>
+        <button class="blog-totop "><i class="fa-solid fa-angle-up"></i></button>
+        </div>
     </footer>
 
 </body>
@@ -144,7 +147,7 @@
             .when("/", {
                 templateUrl: "./view/home.html",
             })
-            .when("/shop", {
+            .when("/shop/:nameProduct", {
                 templateUrl: "./view/prouct.html",
             })
             .when("/contact", {
@@ -158,6 +161,15 @@
             })
             .when("/cart", {
                 templateUrl: "./view/cart.html",
+            })
+            .when("/contact", {
+                templateUrl: "./view/contact.html",
+            })
+            .when("/login", {
+                templateUrl: "./view/login.html",
+            })
+            .when("/blog", {
+                templateUrl: "./view/blog.html",
             });
     });
     myApp.run(function ($rootScope, $http) {
@@ -170,7 +182,8 @@
     myApp.factory("myService", function () {
         var savedData = {};
         var saveType = "";
-        var listCart = []
+        var listCart = [];
+
         // set data product
         function set(data) {
             savedData = data;
@@ -239,9 +252,112 @@
             resetListCart: resetListCart,
         };
     });
+    myApp.filter("myFilter", function () {
+        return function (items, search) {
+            if (!search) {
+                return items;
+            }
+            var type = search;
+            if (!type || "shop" == type) {
+                return items;
+            }
+
+            if (search == "InDoor" || search == "Succulent" || search == "floweringShrubs") {
+                return items.filter(function (element, index) {
+                    console.log(search);
+                    return element.brand == search;
+                });
+            }
+
+            return items.filter(function (element, index) {
+                return element.type == search;
+            });
+        };
+    });
+    // filte price
+    myApp.filter("rangePrice", function () {
+        return function (items, rangePrice) {
+            var filteredValue = [];
+            var toPrice =
+                rangePrice.toPrice != undefined ? parseInt(rangePrice.toPrice) : 1;
+            var fromPrice =
+                rangePrice.fromPrice != undefined ? parseInt(rangePrice.fromPrice) : 100;
+            angular.forEach(items, function (item) {
+                if (item.price >= toPrice) {
+                    filteredValue.push(item);
+                }
+            });
+            return filteredValue;
+        };
+    });
     // controller home
     myApp.controller("homeCtrl", function ($scope, myService) {
         let fade = document.querySelectorAll(".fade");
+        $scope.prop = $routeParams.nameProduct;
+        //pagination product
+        $scope.begin = 0;
+        $scope.pageSize = 12;
+        $scope.pageCount = Math.ceil($scope.dataProduct.length / $scope.pageSize);
+
+        $scope.first = function () {
+            $scope.begin = 0;
+        };
+        $scope.previous = function () {
+            if ($scope.begin > 0) {
+                $scope.begin -= $scope.pageSize;
+            }
+        };
+        $scope.next = function () {
+            if ($scope.begin < ($scope.pageSize - 1) * $scope.pageSize) {
+                $scope.begin += $scope.pageSize;
+            }
+        };
+        $scope.last = function () {
+            $scope.begin = ($scope.pageSize - 1) * $scope.pageSize;
+        };
+        $scope.sortBy = function (prop) {
+            $scope.prop = prop;
+        };
+
+        // range input change background by price
+        $("#slider-range").slider({
+            range: true,
+            min: 0,
+            max: 200,
+            values: [1, 100],
+            slide: function (event, ui) {
+                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            },
+        });
+        $("#amount").val(
+            "$" +
+            $("#slider-range").slider("values", 0) +
+            " - $" +
+            $("#slider-range").slider("values", 1)
+        );
+
+        $("#slider-range-shop").slider({
+            range: true,
+            min: 0,
+            max: 200,
+            values: [1, 100],
+            slide: function (event, ui) {
+                $("#amount-shop").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                $scope.to_price = ui.values[0];
+                $scope.from_price = ui.values[1];
+            },
+        });
+        $("#amount-shop").val(
+            "$" +
+            $("#slider-range-shop").slider("values", 0) +
+            " - $" +
+            $("#slider-range-shop").slider("values", 1)
+        );
+
+        // save item data  myservice
+        $scope.saveData = function (item) {
+            myService.set(item);
+        };
 
         let index = 0;
 
@@ -312,8 +428,8 @@
         console.log($scope.listPresProduct)
     });
     // product controller
-    myApp.controller("productCtrl", function ($scope, myService) {
-
+    myApp.controller("productCtrl", function ($scope, myService, $routeParams) {
+        $scope.prop = $routeParams.nameProduct;
 
         // save item data  myservice
         $scope.saveData = function (item) {
@@ -386,9 +502,59 @@
         }
     })
 
+    function myFunction() {
+        if (localStorage.getItem("count") == null) {
+            localStorage["count"] = 1
+        }
+        var cnt = parseInt(localStorage["count"])
+        cnt++;
+        localStorage["count"] = cnt;
 
 
+        if (localStorage.getItem("countNow") == null) {
+            localStorage["countNow"] = 0
+        }
+        var countNow = parseInt(localStorage["countNow"])
+        countNow++;
+        localStorage["countNow"] = countNow;
 
+
+        document.getElementById("countNow").innerHTML = countNow;
+        document.getElementById("count").innerHTML = cnt;
+    }
+    function myUnFunction() {
+        if (localStorage.getItem("countNow") != null) {
+
+            var countNow = parseInt(localStorage["countNow"])
+            countNow--;
+            localStorage["countNow"] = countNow;
+
+        }
+
+    }
+
+    //scroll to top
+    const button = document.querySelector("a");
+    const btn = document.querySelector("button");
+    const div = document.querySelector("div");
+    button.addEventListener("click", () => {
+        window.scrollTo(0, 0);
+    });
+    btn.addEventListener("click", () => {
+        window.scrollTo(0, 0);
+    });
+    button.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: `smooth`,
+        });
+    });
+    btn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: `smooth`,
+        });
+    });
 </script>
 
 </html>
