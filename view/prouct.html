@@ -99,8 +99,9 @@
             <div class="wd-76">
 
                 <div class="products">
-                    <div class="card-product wd-thir" ng-repeat="item in dataProduct |limitTo:9">
-                        <ul class="card-list">
+                    <div class="card-product wd-thir" ng-repeat="item in dataProduct | myFilter:prop|rangePrice:
+                    {'toPrice':to_price,'fromPrice':from_price}| limitTo :pageSize:begin">
+                        <ul class=" card-list">
                             <li class="card-item_img"><img src="{{item.img}}" alt="" class="card-img">
                             </li>
                             <li class="card-item">
@@ -109,9 +110,8 @@
                             </li>
                             <li class="card-item">{{item.brand}}</li>
 
-                            <li class="card-item"><a href="#!detail" class="card-link btn" ng-click="saveData(item)">Add
-                                    to
-                                    card</a></li>
+                            <li class="card-item"><a href="#!detail" class="card-link btn"
+                                    ng-click="saveData(item)">Detail</a></li>
                         </ul>
                     </div>
                 </div>
